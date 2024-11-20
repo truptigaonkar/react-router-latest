@@ -6,13 +6,16 @@ import App from "./App.tsx";
 import About from "./components/About.tsx";
 import Layout from "./components/Layout.tsx";
 import Contact from "./components/Contact.tsx";
+import ErrorPage from "./components/ErrorPage.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />, // Use Layout as the parent element
+    // errorElement: <h4>Page not found</h4>,
+    errorElement: <ErrorPage />,
     children: [
-      { path: "/", element: <App /> }, // Nested routes
+      { path: "/", element: <App /> },
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },
     ],
